@@ -90,7 +90,7 @@ class ParallelTexts(List[TextPair]):
     @staticmethod
     def from_dict(d : dict) -> 'ParallelTexts':
         if 'text_pairs' not in d:
-            raise('Error! Dict does not contain text pairs!')
+            raise Exception('Error! Dict does not contain text pairs!')
         text_pairs = [TextPair.from_dict(tp) for tp in d['text_pairs']]
         return ParallelTexts(text_pairs, d.get('meta'))
 
